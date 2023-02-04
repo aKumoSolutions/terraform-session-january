@@ -6,7 +6,7 @@ terraform {
       version = "~> 4.53.0" # AWS Provider
     }
   }
-}
+}   
 
 # Terraform = v1.3.7
 # AWS Provider = v4.53.0
