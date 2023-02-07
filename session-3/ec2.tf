@@ -1,7 +1,7 @@
 resource "aws_instance" "main" {
-    ami = "ami-06e85d4c3149db26a"
+    ami = "ami-06e85d4c3149db26a" # string + hard coded value
     instance_type = "t2.micro"
-    vpc_security_group_ids = [ "aws_security_group.main_sg.id" ] # a list of strings
+    vpc_security_group_ids = [ aws_security_group.main_sg.id ] # a list of strings # dynamic reference
 }
 
 # List?
@@ -22,5 +22,8 @@ resource "aws_instance" "main" {
 # Reference to Resource
 
 # first_label.second_label.attribute
+
+# "aws_security_group.main_sg.id" = static or hard coded value (String)
+# aws_security_group.main_sg.id = reference to resource >> (string, number, boolean)
 
 
