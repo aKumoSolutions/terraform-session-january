@@ -1,9 +1,9 @@
 resource "aws_instance" "main" {
-    ami = "ami-06e85d4c3149db26a" # string + hard coded value
-    instance_type = "t2.micro"
+    ami = var.ami # string + hard coded value
+    instance_type = var.instance_type
     vpc_security_group_ids = [ aws_security_group.main_sg.id ] # a list of strings # dynamic reference
     tags = {                  # a map 
-        Name = "development"
+        Name = var.env
     }
 }
 
@@ -14,7 +14,6 @@ resource "aws_instance" "main" {
 
 # list of strings = ["ert", "zxc", "qwe"]
 # list of numbers = [ 6, 8, 0 ]
-
 # Data Type
 # 1. Integer 
 # 2. Float 
@@ -33,4 +32,6 @@ resource "aws_instance" "main" {
 # main_sg = second_label 
 # id = attribute
 
+# Reference to input variable 
+# Syntax: var.variable_name
 
