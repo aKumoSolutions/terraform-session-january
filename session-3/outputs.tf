@@ -6,5 +6,5 @@ output "instance_ip_address" {
 }
 output "instance_state" {
   value       =  aws_instance.main.instance_state
-  description = "The volume id of main EC2 instance"
+  description = "The state of main EC2 instance"
 }
