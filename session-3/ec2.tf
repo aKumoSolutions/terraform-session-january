@@ -7,6 +7,8 @@ resource "aws_instance" "main" {
     }
 }
 
+
+
 # List?
 
 # Fruit = [ apple, orange, banana]   # a list of fruits 
