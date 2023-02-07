@@ -3,7 +3,7 @@ resource "aws_security_group" "main_sg" {
   description = "Allow SSH inbound traffic"
 
   ingress {
-    from_port        = 22
+    from_port        = 22 # a single value
     to_port          = 22
     protocol         = "tcp"  # string
     cidr_blocks      = ["0.0.0.0/0"] # list of strings
