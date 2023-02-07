@@ -3,7 +3,7 @@
 variable "instance_type" {
     type = string
     description = "This is an instance type for EC2 instances"
-    default = "t3.micro"
+    default = "t2.micro"
 }
 variable "ami" {
     type = string
