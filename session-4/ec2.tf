@@ -3,9 +3,13 @@ resource "aws_instance" "main" {
     instance_type = var.instance_type
     vpc_security_group_ids = [ aws_security_group.main_sg.id ] 
     tags = {              
-        Name = var.env-instance
+        Name = "${var.env}-instance"
     }
 }
+
+  # variable + hardcoded value
+  # var.env  + -instance
+
 # dev-instance
 # qa-instance
 # stage-instance
@@ -16,7 +20,7 @@ resource "aws_instance" "main_frontend" {
     instance_type = var.instance_type
     vpc_security_group_ids = [ aws_security_group.main_sg.id ] 
     tags = {              
-        Name = var.env-frontend-instance
+        Name = "${var.env}-frontend-instance"
     } 
 }
 
