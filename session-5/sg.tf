@@ -3,10 +3,10 @@ resource "aws_security_group" "main_sg" {
   description = "Allow SSH inbound traffic"
 }
 resource "aws_security_group_rule" "ingress" {
-  count = 2 
+  count = length( var.ports ) # 5
   type              = "ingress"
-  to_port           = element( var.ports, count.index ) # 22
-  from_port         = element( var.ports, count.index ) # 22
+  to_port           = element( var.ports, count.index ) # 22, 80
+  from_port         = element( var.ports, count.index ) # 22, 80
   cidr_blocks = ["0.0.0.0/0"]
   protocol          = "tcp"
   security_group_id = aws_security_group.main_sg.id
