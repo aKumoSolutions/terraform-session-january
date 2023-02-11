@@ -8,3 +8,12 @@ variable "env" {
     description = "Indicates the environment"
     default = "dev"
 }
+variable "ports" {
+    type = list(string)
+    description = "List of ports"
+    default = ["22"]
+}
+
+# element(list, index)
+
+# element(var.ports, 0 )
