@@ -22,6 +22,7 @@ resource "random_password" "db_password" {
     override_special = "%@"
 }
 
+
 # Equality Operators:
 # a == a 
 # > true
