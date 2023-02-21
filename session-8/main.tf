@@ -22,6 +22,12 @@ resource "aws_instance" "main" {
             "sudo systemctl start httpd",
             "sudo cp /tmp/index.html /var/www/html/index.html"
         ]
+        connection {
+            type = "ssh"
+            user = "ec2-user" # Remote Server User
+            host = self.public_ip
+            private_key = file("~/.ssh/id_rsa")
+        }
     }
 }
 # ssh user@ip, it automatically checks public key on the remote machine, private key on my local machine
