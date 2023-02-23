@@ -18,4 +18,6 @@ module "ec2_sg" {
     env = "dev"
 }
 
-Refence to Child Module?
+# How to Refence to Child Module?
+
+# You always reference to Child Module outputs
